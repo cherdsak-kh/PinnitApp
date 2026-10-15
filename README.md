@@ -159,15 +159,8 @@ PinnitApp/
 ├── utils/
 │   ├── storage.ts            # AsyncStorage (pins, settings, cache, pending sync)
 │   ├── pinsSync.ts           # โหลด/บันทึก/ซิงค์ ระหว่าง local กับ Supabase
-<<<<<<< Updated upstream
-│   ├── geocoding.ts          # getLocationName(lat, lon) — reverse geocoding (fetch)
-│   ├── format.ts             # จัดรูปแบบเวลา
-│   ├── avatarUpload.ts       # อัปโหลดรูปโปรไฟล์ขึ้น Supabase Storage
-│   └── network.ts            # ตรวจสอบสถานะเครือข่าย (NetInfo)
-=======
 │   ├── geocoding.ts          # getLocationName(lat, lon) - reverse geocoding (fetch)
 │   └── format.ts             # จัดรูปแบบเวลา
->>>>>>> Stashed changes
 ├── docs/
 │   ├── TECH_STACK_DOCUMENTATION.md   # รายงานเทคนิคฉบับเต็ม
 │   ├── SUPABASE_SETUP.md             # วิธีตั้งค่า Supabase
@@ -194,11 +187,7 @@ PinnitApp/
 | แผนที่ | react-native-maps (MapView, Marker, Region) |
 | ตำแหน่ง | expo-location (getCurrentPositionAsync, watchPositionAsync, permissions) |
 | เก็บข้อมูลในเครื่อง | @react-native-async-storage/async-storage (pins, settings, cache, sync state) |
-<<<<<<< Updated upstream
-| Backend & DB | Supabase (@supabase/supabase-js) — Auth + ตาราง `pins`, RLS, Storage (รูปโปรไฟล์) |
-=======
-| Backend & DB | Supabase (@supabase/supabase-js) - Auth + ตาราง `pins`, RLS |
->>>>>>> Stashed changes
+| Backend & DB | Supabase (@supabase/supabase-js) - Auth + ตาราง `pins`, RLS, Storage (รูปโปรไฟล์) |
 | ดึงข้อมูล | fetch (geocoding API), Supabase SDK (select/insert/update/delete) |
 | รายการ | FlatList (virtualization, keyExtractor, renderItem → PinItem) |
 | Env | react-native-dotenv (GEOCODE_*, STORAGE_KEY, SUPABASE_*) — อ้างผ่าน `@env` |
@@ -259,14 +248,9 @@ eas build --platform ios
 
 ## 🔐 Permissions
 
-<<<<<<< Updated upstream
-- **Location** — สำหรับตำแหน่งปัจจุบันและติดตามการเคลื่อนที่
-- **Storage** — สำหรับเก็บ pins ในเครื่อง
-- **รูปภาพ (Photos/Media)** — สำหรับเลือกรูปโปรไฟล์ (อวาตาร์) จากแกลเลอรีหรือกล้อง (เมื่อใช้ฟีเจอร์อัปโหลดรูปโปรไฟล์)
-=======
 - **Location** - สำหรับตำแหน่งปัจจุบันและติดตามการเคลื่อนที่
 - **Storage** - สำหรับเก็บ pins ในเครื่อง
->>>>>>> Stashed changes
+- **รูปภาพ (Photos/Media)** - สำหรับเลือกรูปโปรไฟล์ (อวาตาร์) จากแกลเลอรีหรือกล้อง (เมื่อใช้ฟีเจอร์อัปโหลดรูปโปรไฟล์)
 
 ---
 
@@ -285,13 +269,9 @@ eas build --platform ios
 
 รายงานการออกแบบและเทคนิคที่ใช้ใน PinnitApp (Navigation, Home/FlatList, Fetch, AsyncStorage, GPS/Map, Supabase) อธิบายโดยละเอียดใน:
 
-<<<<<<< Updated upstream
-- **[docs/TECH_STACK_DOCUMENTATION.md](docs/TECH_STACK_DOCUMENTATION.md)** — รายงานฉบับเต็ม (ภาษาไทย)
-- **[docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md)** — วิธีตั้งค่า Supabase สำหรับโปรเจกต์
-- **[docs/RUN_IOS_ANDROID.md](docs/RUN_IOS_ANDROID.md)** — วิธีรันแอปบน iOS และ Android
-=======
 - **[docs/TECH_STACK_DOCUMENTATION.md](docs/TECH_STACK_DOCUMENTATION.md)** - รายงานฉบับเต็ม (ภาษาไทย)
->>>>>>> Stashed changes
+- **[docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md)** - วิธีตั้งค่า Supabase สำหรับโปรเจกต์
+- **[docs/RUN_IOS_ANDROID.md](docs/RUN_IOS_ANDROID.md)** - วิธีรันแอปบน iOS และ Android
 
 ---
 
