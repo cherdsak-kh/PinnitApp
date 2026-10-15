@@ -1,6 +1,6 @@
 # 📍 Pinnit App
 
-แอปบันทึกตำแหน่งที่ชอบ — บันทึกจุดบนแผนที่ ดูและจัดการ pins ได้ง่าย  
+แอปบันทึกตำแหน่งที่ชอบ - บันทึกจุดบนแผนที่ ดูและจัดการ pins ได้ง่าย  
 สร้างด้วย **React Native** และ **Expo** ใช้ได้โดยไม่ต้องล็อกอิน (ข้อมูลเก็บในเครื่อง) หรือล็อกอินเพื่อซิงค์ pins กับ **Supabase** และใช้ร่วมกันข้ามอุปกรณ์ได้
 
 ---
@@ -28,11 +28,12 @@
 
 **Pinnit** เป็นแอปมือถือที่ให้คุณบันทึกตำแหน่งสำคัญและจัดการได้จากที่เดียว
 
-- **ใช้โดยไม่ล็อกอิน** — ข้อมูล pins เก็บในเครื่อง (AsyncStorage) เท่านั้น
-- **ใช้พร้อมล็อกอิน** — ข้อมูล sync กับ Supabase ได้ อัปโหลด/ดาวน์โหลด pins ระหว่างบัญชีกับเครื่อง
+- **ใช้โดยไม่ล็อกอิน** - ข้อมูล pins เก็บในเครื่อง (AsyncStorage) เท่านั้น
+- **ใช้พร้อมล็อกอิน** - ข้อมูล sync กับ Supabase ได้ อัปโหลด/ดาวน์โหลด pins ระหว่างบัญชีกับเครื่อง
 
 Pinnit lets you:
 
+<<<<<<< Updated upstream
 - **Pin ตำแหน่งปัจจุบัน** — บันทึกพิกัดพร้อมชื่อจาก reverse geocoding (หรือตั้งชื่อเอง)
 - **ดูบนแผนที่** — ดู pins ทั้งหมดบนแผนที่ (react-native-maps)
 - **แก้ไขชื่อ** — กดค้างที่รายการเพื่อแก้ชื่อ pin (เฉพาะ pin ที่เป็นเจ้าของ)
@@ -40,6 +41,14 @@ Pinnit lets you:
 - **โหมดมืด & สไตล์แผนที่** — เก็บค่าการตั้งค่าในเครื่อง
 - **ซิงค์กับ Cloud** — ล็อกอินด้วย username; อัปโหลด pins จากเครื่องขึ้นบัญชี หรือดาวน์โหลดจากบัญชีลงเครื่อง (ตั้งค่าใน Settings)
 - **โปรไฟล์** — อัปโหลดรูปโปรไฟล์ (อวาตาร์) และแก้ไขชื่อแสดง; ดูคู่มือการใช้งานจาก Settings
+=======
+- **Pin ตำแหน่งปัจจุบัน** - บันทึกพิกัดพร้อมชื่อจาก reverse geocoding (หรือตั้งชื่อเอง)
+- **ดูบนแผนที่** - ดู pins ทั้งหมดบนแผนที่ (react-native-maps)
+- **แก้ไขชื่อ** - กดค้างที่รายการเพื่อแก้ชื่อ pin (เฉพาะ pin ที่เป็นเจ้าของ)
+- **ปัดเพื่อลบ** - ลบ pin ด้วยการปัด (swipe); pin ที่ไม่ใช่เจ้าของแสดงแบบอ่านอย่างเดียว
+- **โหมดมืด & สไตล์แผนที่** - เก็บค่าการตั้งค่าในเครื่อง
+- **ซิงค์กับ Cloud** - ล็อกอินด้วย username; อัปโหลด pins จากเครื่องขึ้นบัญชี หรือดาวน์โหลดจากบัญชีลงเครื่อง (ตั้งค่าใน Settings)
+>>>>>>> Stashed changes
 
 ---
 
@@ -99,7 +108,7 @@ GEOCODE_API_KEY=your_api_key_here
 GEOCODE_API_URL=https://geocode.maps.co/reverse
 STORAGE_KEY=@pinnit_saved_pins
 
-# Supabase (Auth + ฐานข้อมูล pins) — สร้างโปรเจกต์ที่ https://supabase.com
+# Supabase (Auth + ฐานข้อมูล pins) - สร้างโปรเจกต์ที่ https://supabase.com
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_ANON_KEY=your_anon_key_here
 ```
@@ -131,7 +140,7 @@ PinnitApp/
 │   ├── index.tsx             # Redirect ไป /(tabs)
 │   ├── (tabs)/               # Bottom tabs
 │   │   ├── _layout.tsx       # Tab layout
-│   │   ├── index.tsx         # Home — รายการ pins (local + Supabase)
+│   │   ├── index.tsx         # Home - รายการ pins (local + Supabase)
 │   │   ├── map.tsx           # แผนที่ + markers
 │   │   └── settings.tsx      # ตั้งค่า, ล็อกอิน/สมัคร, อัปโหลด/ดาวน์โหลด pins, โปรไฟล์
 │   └── (auth)/               # กลุ่มหน้าจอ Auth (ไม่มี tabs)
@@ -160,10 +169,15 @@ PinnitApp/
 ├── utils/
 │   ├── storage.ts            # AsyncStorage (pins, settings, cache, pending sync)
 │   ├── pinsSync.ts           # โหลด/บันทึก/ซิงค์ ระหว่าง local กับ Supabase
+<<<<<<< Updated upstream
 │   ├── geocoding.ts          # getLocationName(lat, lon) — reverse geocoding (fetch)
 │   ├── format.ts             # จัดรูปแบบเวลา
 │   ├── avatarUpload.ts       # อัปโหลดรูปโปรไฟล์ขึ้น Supabase Storage
 │   └── network.ts            # ตรวจสอบสถานะเครือข่าย (NetInfo)
+=======
+│   ├── geocoding.ts          # getLocationName(lat, lon) - reverse geocoding (fetch)
+│   └── format.ts             # จัดรูปแบบเวลา
+>>>>>>> Stashed changes
 ├── docs/
 │   ├── TECH_STACK_DOCUMENTATION.md   # รายงานเทคนิคฉบับเต็ม
 │   ├── SUPABASE_SETUP.md             # วิธีตั้งค่า Supabase
@@ -190,7 +204,11 @@ PinnitApp/
 | แผนที่ | react-native-maps (MapView, Marker, Region) |
 | ตำแหน่ง | expo-location (getCurrentPositionAsync, watchPositionAsync, permissions) |
 | เก็บข้อมูลในเครื่อง | @react-native-async-storage/async-storage (pins, settings, cache, sync state) |
+<<<<<<< Updated upstream
 | Backend & DB | Supabase (@supabase/supabase-js) — Auth + ตาราง `pins`, RLS, Storage (รูปโปรไฟล์) |
+=======
+| Backend & DB | Supabase (@supabase/supabase-js) - Auth + ตาราง `pins`, RLS |
+>>>>>>> Stashed changes
 | ดึงข้อมูล | fetch (geocoding API), Supabase SDK (select/insert/update/delete) |
 | รายการ | FlatList (virtualization, keyExtractor, renderItem → PinItem) |
 | Env | react-native-dotenv (GEOCODE_*, STORAGE_KEY, SUPABASE_*) — อ้างผ่าน `@env` |
@@ -251,9 +269,14 @@ eas build --platform ios
 
 ## 🔐 Permissions
 
+<<<<<<< Updated upstream
 - **Location** — สำหรับตำแหน่งปัจจุบันและติดตามการเคลื่อนที่
 - **Storage** — สำหรับเก็บ pins ในเครื่อง
 - **รูปภาพ (Photos/Media)** — สำหรับเลือกรูปโปรไฟล์ (อวาตาร์) จากแกลเลอรีหรือกล้อง (เมื่อใช้ฟีเจอร์อัปโหลดรูปโปรไฟล์)
+=======
+- **Location** - สำหรับตำแหน่งปัจจุบันและติดตามการเคลื่อนที่
+- **Storage** - สำหรับเก็บ pins ในเครื่อง
+>>>>>>> Stashed changes
 
 ---
 
@@ -272,9 +295,13 @@ eas build --platform ios
 
 รายงานการออกแบบและเทคนิคที่ใช้ใน PinnitApp (Navigation, Home/FlatList, Fetch, AsyncStorage, GPS/Map, Supabase) อธิบายโดยละเอียดใน:
 
+<<<<<<< Updated upstream
 - **[docs/TECH_STACK_DOCUMENTATION.md](docs/TECH_STACK_DOCUMENTATION.md)** — รายงานฉบับเต็ม (ภาษาไทย)
 - **[docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md)** — วิธีตั้งค่า Supabase สำหรับโปรเจกต์
 - **[docs/RUN_IOS_ANDROID.md](docs/RUN_IOS_ANDROID.md)** — วิธีรันแอปบน iOS และ Android
+=======
+- **[docs/TECH_STACK_DOCUMENTATION.md](docs/TECH_STACK_DOCUMENTATION.md)** - รายงานฉบับเต็ม (ภาษาไทย)
+>>>>>>> Stashed changes
 
 ---
 
